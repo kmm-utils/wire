@@ -33,6 +33,9 @@ kotlin {
     tvosX64()
     tvosArm64()
     tvosSimulatorArm64()
+    watchosX64()
+    watchosArm64()
+    watchosSimulatorArm64()
   }
   sourceSets {
     val commonMain by getting {
@@ -61,7 +64,11 @@ kotlin {
       val tvosX64Main by getting
       val tvosArm64Main by getting
       val tvosSimulatorArm64Main by getting
-      for (it in listOf(iosX64Main, iosArm64Main, iosSimulatorArm64Main, linuxX64Main, macosX64Main, macosArm64Main, mingwX64Main, tvosX64Main, tvosArm64Main, tvosSimulatorArm64Main)) {
+      val watchosX64Main by getting
+      val watchosArm64Main by getting
+      val watchosSimulatorArm64Main by getting
+
+      for (it in listOf(iosX64Main, iosArm64Main, iosSimulatorArm64Main, linuxX64Main, macosX64Main, macosArm64Main, mingwX64Main, tvosX64Main, tvosArm64Main, tvosSimulatorArm64Main, watchosX64Main, watchosArm64Main, watchosSimulatorArm64Main)) {
         it.dependsOn(nativeMain)
       }
     }
